@@ -1,15 +1,56 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+.card-img {
+  height: 10rem;
+  background: url('special-delivery.jpg');
+}
+
+.article .header {
+  position: relative;
+  overflow: hidden;
+}
+
+.article .header::after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateZ(-1px) scale(1.5);
+  background-size: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.3)), url("special-delivery.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.3)), url("special-delivery.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  z-index: -1;
+}
+
+.search {
+  position: relative;
+  box-shadow: 0 0 40px rgba(51, 51, 51, .1)
+}
+
+.search input {
+  height: 60px;
+  text-indent: 25px;
+  border: 2px solid #d6d4d4
+}
+
+.search input:focus {
+  box-shadow: none;
+  border: 2px solid #1266F1
+}
+
+.search .fa-search {
+  position: absolute;
+  top: 20px;
+  left: 16px
+}
+
+.search button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  height: 50px;
+  width: 110px;
+  background: #39C0ED
+}

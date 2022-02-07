@@ -1,0 +1,19 @@
+
+<section class="article">
+  <div class="header text-white p-5">
+    <div class="container">
+      <h1><%= @article.title %></h1>
+      <p class="mb-1"><strong>Published on:</strong> <%= @article.created_at.to_formatted_s(:long) %></p>
+      <p><strong>Published by:</strong> <%= @article.author %></p>
+      
+      
+      <%= link_to 'Edit', edit_path(id: @article.id), class: 'btn btn-primary' %>
+      <%= link_to 'Remove', delete_path(id: @article.id), data: { 'turbo-method': :delete }, class: 'btn btn-danger' %>
+    </div>
+    </div>
+    
+    <div class="body container py-3">
+      <p style="white-space: pre-wrap"><%= @article.body %></p>
+    </div>
+</section>
+

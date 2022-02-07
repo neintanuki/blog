@@ -1,0 +1,39 @@
+<%= form_with model: @article_model, method: :post, class: 'col-md-6 mx-auto' do | f | %>
+  <h1 class="my-3">Publish Article</h1>
+
+  <% if params[:status] %>
+    <h1>jfl</h1>
+  <% end %>
+
+  <div class="mb-3">
+    <%= f.label :title, class: 'form-label' %>
+    <%= f.text_field :title, class: 'form-control' %>
+    <% if flash[:title] %>
+      <% flash[:title].each do | err | %>
+        <span class="fw-bold text-danger pt-2"><%= 'Title ' + err %></span>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :author, class: 'form-label' %>
+    <%= f.text_field :author, class: 'form-control' %>
+    <% if flash[:author] %>
+      <% flash[:author].each do | err | %>
+        <span class="fw-bold text-danger pt-2"><%= 'Author ' + err %></span>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :body, class: 'form-label' %>
+    <%= f.text_area :body, size: '30x6', class: 'form-control' %>
+    <% if flash[:body] %>
+      <% flash[:body].each do | err | %>
+        <span class="fw-bold text-danger pt-2"><%= 'Body ' + err %></span>
+      <% end %>
+    <% end %>
+  </div>
+
+  <%= f.submit 'Publish Article', class: 'btn btn-dark' %>
+<% end %>

@@ -1,0 +1,28 @@
+<%= form_with model: @article_model, method: :patch, url: '/update/' + @article.id.to_s, class: 'col-md-6 mx-auto' do | f | %>
+  <h1 class="my-3">Edit Article</h1>
+
+  <% if flash[:status] %>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <%= flash[:status] %>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= f.label :title, class: 'form-label' %>
+    <%= f.text_field :title, value: @article.title, class: 'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :author, class: 'form-label' %>
+    <%= f.text_field :author, value: @article.author, class: 'form-control' %>
+
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :body, class: 'form-label' %>
+    <%= f.text_area :body, size: '30x6', value: @article.body, class: 'form-control' %>
+  </div>
+
+  <%= f.submit 'Update Article', class: 'btn btn-dark' %>
+<% end %>
